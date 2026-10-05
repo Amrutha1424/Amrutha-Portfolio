@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Unnava Amrutha Varshini | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f8fc;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #e5e7ef;
+            padding: 18px 7%;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #5b4bff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+        }
+
+        nav ul li a:hover {
+            color: #5b4bff;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 70px 7%;
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            width: 100%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.4fr 0.6fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .small-title {
+            color: #5b4bff;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 75px);
+            line-height: 1;
+            margin: 18px 0;
+        }
+
+        .hero h1 span {
+            color: #5b4bff;
+        }
+
+        .hero p {
+            color: #666;
+            font-size: 18px;
+            max-width: 650px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 13px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            border: 1px solid #ddd;
+            color: #172033;
+        }
+
+        .btn-primary {
+            background: #5b4bff;
+            color: white;
+            border-color: #5b4bff;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .profile-card {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            border: 1px solid #e5e7ef;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: #5b4bff;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .profile-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .profile-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 90px 24px;
+            border-top: 1px solid #e5e7ef;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .section-intro {
+            color: #666;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e5e7ef;
+            border-radius: 20px;
+            padding: 25px;
+        }
+
+        .card h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .card p,
+        .card li {
+            color: #666;
+        }
+
+        .card ul {
+            padding-left: 20px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 18px;
+        }
+
+        .tag {
+            background: #f0efff;
+            color: #5142e8;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .education {
+            display: grid;
+            gap: 18px;
+        }
+
+        .education-card {
+            display: flex;
+            gap: 25px;
+            background: white;
+            border: 1px solid #e5e7ef;
+            border-radius: 20px;
+            padding: 25px;
+        }
+
+        .year {
+            min-width: 100px;
+            color: #5b4bff;
+            font-weight: bold;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: white;
+            border: 1px solid #e5e7ef;
+            border-radius: 18px;
+            padding: 22px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .contact-card a {
+            color: #172033;
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            color: #5b4bff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px;
+            border-top: 1px solid #e5e7ef;
+            color: #777;
+        }
+
+        @media (max-width: 750px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                padding: 50px 7%;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .cards,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-card {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">AV.</div>
+
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Hero / About -->
+    <div class="hero" id="about">
+
+        <div class="hero-container">
+
+            <div>
+                <div class="small-title">
+                    B.Tech Final Year · AI & ML
+                </div>
+
+                <h1>
+                    Hi, I'm
+                    <span>Amrutha Varshini.</span>
+                </h1>
+
+                <p>
+                    Enthusiastic and motivated B.Tech final-year student
+                    specializing in Artificial Intelligence and Machine Learning,
+                    with a strong willingness to learn, build practical projects,
+                    and grow in a professional environment.
+                </p>
+
+                <div class="buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        View Projects
+                    </a>
+
+                    <a href="#contact" class="btn">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="profile-card">
+
+                <div class="avatar">
+                    AV
+                </div>
+
+                <h3>
+                    Unnava Amrutha Varshini
+                </h3>
+
+                <p>
+                    Artificial Intelligence & Machine Learning
+                    <br><br>
+
+                    Vasireddy Venkatadri Institute of Technology
+                    <br>
+
+                    Nambur · 2023–2027
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <h2>Skills</h2>
+
+        <p class="section-intro">
+            A practical foundation across programming, web development,
+            databases, tools, and core computer science concepts.
+        </p>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Programming</h3>
+
+                <div class="tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Python</span>
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Frontend</h3>
+
+                <div class="tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Database & Tools</h3>
+
+                <div class="tags">
+                    <span class="tag">MySQL</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">GitHub</span>
+                    <span class="tag">VS Code</span>
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>CS Fundamentals</h3>
+
+                <div class="tags">
+                    <span class="tag">Data Structures</span>
+                    <span class="tag">OOP</span>
+                    <span class="tag">Operating Systems</span>
+                    <span class="tag">Computer Networks</span>
+                    <span class="tag">DBMS</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+
+        <h2>Projects</h2>
+
+        <p class="section-intro">
+            Projects demonstrating hands-on work in academic management
+            software and basic computer vision.
+        </p>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>
+                    Smart School Diary
+                </h3>
+
+                <p>
+                    <strong>
+                        Digital Academic Management Platform
+                    </strong>
+                </p>
+
+                <br>
+
+                <p>
+                    Built an academic management application for students,
+                    teachers, and parents with attendance, assignments,
+                    academic reporting, homework submission, teacher feedback,
+                    responsive interfaces, and MySQL-based record management.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">ReactJS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">MySQL</span>
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Image Recognition Using Python
+                </h3>
+
+                <p>
+                    Developed a basic image recognition application to identify
+                    and classify objects from input images.
+                </p>
+
+                <br>
+
+                <p>
+                    Used OpenCV and NumPy for image loading, processing,
+                    resizing, preprocessing, and basic image analysis.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">OpenCV</span>
+                    <span class="tag">NumPy</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Education -->
+    <section id="education">
+
+        <h2>Education</h2>
+
+        <div class="education">
+
+
+            <div class="education-card">
+
+                <div class="year">
+                    2023–2027
+                </div>
+
+                <div>
+
+                    <h3>
+                        B.Tech · Artificial Intelligence & Machine Learning
+                    </h3>
+
+                    <p>
+                        Vasireddy Venkatadri Institute of Technology,
+                        Nambur
+                    </p>
+
+                    <p>
+                        CGPA: 7.67
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <div class="year">
+                    2021–2023
+                </div>
+
+                <div>
+
+                    <h3>
+                        Intermediate · MPC
+                    </h3>
+
+                    <p>
+                        NRI Junior College, Tenali
+                    </p>
+
+                    <p>
+                        Score: 9.1
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <div class="year">
+                    2021
+                </div>
+
+                <div>
+
+                    <h3>
+                        SSC
+                    </h3>
+
+                    <p>
+                        Sharon English Medium High School, Tenali
+                    </p>
+
+                    <p>
+                        Score: 9.6
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Certifications & Achievements -->
+    <section>
+
+        <h2>
+            Certifications & Achievements
+        </h2>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>
+                    Certifications
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Python Programming – Codetrantra
+                    </li>
+
+                    <li>
+                        Human Computer Interactions – NPTEL
+                    </li>
+
+                    <li>
+                        Data Science with Python – Infosys Springboard
+                    </li>
+
+                    <li>
+                        MS Office – Informatics Computer Institution
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Achievements
+                </h3>
+
+                <ul>
+
+                    <li>
+                        CodeChef Problem Solving:
+                        600+ coding problems using Java.
+                    </li>
+
+                    <li>
+                        Participated in national-level internal hackathons
+                        and collaborated on technical project solutions.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <h2>
+            Let's Connect
+        </h2>
+
+        <p class="section-intro">
+            Open to opportunities where I can learn, contribute,
+            and gain practical professional experience.
+        </p>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <h3>Email</h3>
+
+                <a href="mailto:varshini14amrutha@gmail.com">
+                    varshini14amrutha@gmail.com
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>Phone</h3>
+
+                <a href="tel:+918555870622">
+                    +91 8555870622
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>LinkedIn</h3>
+
+                <a href="https://linkedin.com/in/amrutha-varshini-unnava-512a37336"
+                   target="_blank">
+
+                    amrutha-varshini-unnava
+
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>GitHub</h3>
+
+                <a href="https://github.com/Amrutha1424"
+                   target="_blank">
+
+                    github.com/Amrutha1424
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        © 2026 Unnava Amrutha Varshini · Portfolio
+
+    </footer>
+
+
+</body>
+</html>
